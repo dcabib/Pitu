@@ -1,8 +1,6 @@
 import { Request, Response } from 'express'
 import { Link } from '../models/link'
-
-const links: Link[] = []
-let nextId = 1
+import linksRepository from '../models/linksRepository'
 
 const generateCode = () => {
     let text = ''
@@ -14,21 +12,25 @@ const generateCode = () => {
     return text
 }
 
-const postLink = (request: Request, response: Response) => {
+const postLink = async (request: Request, response: Response) => {
     const link = request.body as Link
 
-    link.id = nextId++
     link.code = generateCode()
     link.hits = 0
-    links.push(link)
+    const result = await linksRepository.add(link)
+    
+    if (!result.id) {
+        return response.sendStatus(400)
+    }
+
+    link.id = result.id!
 
     return response.status(201).json(link)
 }
 
-const getLink = (request: Request, response: Response) => {
+const getLink = async (request: Request, response: Response) => {
     const code = request.params.code as string
-    const link = links
-        .find(item => item.code === code)
+    const link = await linksRepository.findByCode(code)
 
     if (!link) {
         return response.sendStatus(404)
@@ -37,16 +39,15 @@ const getLink = (request: Request, response: Response) => {
     return response.json(link)
 }
 
-const hitLink = (request: Request, response: Response) => {
+const hitLink = async (request: Request, response: Response) => {
     const code = request.params.code as string
-    const index = links.findIndex(item => item.code === code)
+    const link = await linksRepository.hit(code)
 
-    if (index === -1) {
+    if (!link) {
         return response.sendStatus(404)
     }
 
-    links[index].hits!++ // usar o !++ apenas quando se tem certeza que a varíavel possui um valor
-    return response.json(links[index])
+    return response.json(link)
 }
 
 export default {
