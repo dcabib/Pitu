@@ -72,7 +72,7 @@ class HomePage extends React.Component {
                                     <InputGroup className="mb-3"> 
                                         <FormControl 
                                             autoFocus={true}
-                                            defaultValue={`https://pitu.tk/${code}`}
+                                            defaultValue={`http://localhost:3000/${code}`}
                                             ref={(input) => this.inputURL = input}
                                     />
                                         <InputGroup.Append>
@@ -81,7 +81,7 @@ class HomePage extends React.Component {
                                                 onClick={() => this.copyToClipboard()}>Copiar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
-                                    <p>Para acompanhar as estatíticas, acesse https://pitu.tk/{code}</p>
+                                    <p>Para acompanhar as estatíticas, acesse <strong>http://localhost:3000/{code}/stats</strong></p>
                                 </>
                             )
                         ) }
