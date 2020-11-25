@@ -7,7 +7,8 @@ import { parseISO, formatRelative } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
 import ShortenerService from '../../services/shortenerService'
-import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles'
+import { StatsRow, StatsBox, StatsBoxTitle } from './styles'
+import { BlockContainer } from '../../styles/global'
 
 class StatsPage extends React.Component {
     constructor(props) {
@@ -51,13 +52,13 @@ class StatsPage extends React.Component {
             <Container>
                 <Header>Estatísticas:</Header>
                 { errorMessage ? (
-                    <StatsContainer className="text-center">
-                        <FontAwesomeIcon size="3x" color="#F8D7DA" icon="exclamation-triangle" />
-                        <p className="m-3">{errorMessage}</p>
+                    <BlockContainer className="text-center">
+                        <FontAwesomeIcon size="3x" color="#FF6961" icon="exclamation-triangle" />
+                        <p className="m-3"><strong>{errorMessage}</strong></p>
                         <a className="btn btn-primary" href="/">Encurtar nova URL</a>
-                    </StatsContainer>
+                    </BlockContainer>
                 ) : (
-                    <StatsContainer className="text-center">
+                    <BlockContainer className="text-center">
                         <p><b>http://localhost:3000/{shortenedURL.code}</b></p>
                         <p>Redireciona para:<br/><a href={shortenedURL.url} target="blank_">{shortenedURL.url}</a></p>
                         <StatsRow>
@@ -71,7 +72,7 @@ class StatsPage extends React.Component {
                             </StatsBox>
                         </StatsRow>
                         <a className="btn btn-primary" href="/">Encurtar nova URL</a>
-                    </StatsContainer>
+                    </BlockContainer>
                 ) }
             </Container>
         )

@@ -1,8 +1,9 @@
 import React from 'react'
 import Header from '../../components/Header'
-import { Container } from 'react-bootstrap'
+import { Container, Spinner } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { RedirectContainer } from './styles'
+import { RedirectParagraph } from './styles'
+import { BlockContainer } from '../../styles/global'
 
 import ShortenerService from '../../services/shortenerService'
 
@@ -38,16 +39,19 @@ class RedirectPage extends React.Component {
                 { errorMessage ? (
                     <>
                         <Header>Seu encurtador de URL</Header>
-                        <RedirectContainer className="text-center">
-                            <FontAwesomeIcon size="3x" color="#F8D7DA" icon="exclamation-triangle" />
-                            <p className="m-3">{errorMessage}</p>
+                        <BlockContainer className="text-center">
+                            <FontAwesomeIcon size="3x" color="#FF6961" icon="exclamation-triangle" />
+                            <p className="m-3"><strong>{errorMessage}</strong></p>
                             <a className="btn btn-primary" href="/">Encurtar nova URL</a>
-                        </RedirectContainer>
+                        </BlockContainer>
                     </>
                 ) : (
                     <>
-                        <Header />
-                        <p className="text-center">Redirecionando...</p>
+                        <Header>Seu encurtador de URL</Header>
+                        <RedirectParagraph>Redirecionando...</RedirectParagraph>
+                        <BlockContainer className="text-center">
+                            <Spinner animation="border" />
+                        </BlockContainer>
                     </>
                 ) }
             </Container>
