@@ -6,9 +6,6 @@ import { NotFoundMessage404 } from './styles'
 import { BlockContainer } from '../../styles/global'
 
 class NotFoundPage extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (
