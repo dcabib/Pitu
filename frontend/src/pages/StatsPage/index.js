@@ -60,7 +60,7 @@ class StatsPage extends React.Component {
                 ) : (
                     <BlockContainer className="text-center">
                         <p><b>http://localhost:3000/{shortenedURL.code}</b></p>
-                        <p>Redireciona para:<br/><a href={shortenedURL.url} target="blank_">{shortenedURL.url}</a></p>
+                        <p>Redireciona para:<br/><strong><a href={shortenedURL.url} target="blank_">{shortenedURL.url}</a></strong></p>
                         <StatsRow>
                             <StatsBox>
                                 <b>{shortenedURL.hits}</b>
