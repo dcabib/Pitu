@@ -9,7 +9,7 @@ export const Form = styled.form`
   flex: 0 0 80%;
   max-width: 80%;
   padding: 2rem 2rem 1rem 2rem;
-  border: solid 1px #ccc;
+  border: solid 1px #bbb;
   border-radius: 0.25rem;
   text-align: center;
 `;

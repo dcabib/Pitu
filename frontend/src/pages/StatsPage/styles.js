@@ -11,7 +11,7 @@ export const StatsBox = styled.div`
   flex: 0 0 25%;
   max-width: 25%;
   padding: 2rem;
-  border: solid 1px #ccc;
+  border: solid 1px #bbb;
   border-radius: 0.25rem;
   text-align: center;
   margin: 0.5rem;
