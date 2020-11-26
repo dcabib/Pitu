@@ -11,7 +11,9 @@
 </p>
 
 <p align="center">
-    [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=&uri=) <br/>
+    <a href="https://insomnia.rest/run/?label=&uri=" target="_blank">
+        <img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia">
+    </a><br/>
 </p>
 
 <p align="center">
