@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-    [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=&uri=)<br/>
+    [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=&uri=) <br/>
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-    <img alt="Design do Projeto" width="650px" src="./.github/design-pitu.png" />
+    <img alt="Design do Projeto" src="./.github/design-pitu.PNG" />
 <p>
 
 ## :bookmark: Sobre o Projeto
@@ -31,7 +31,7 @@ O **Pitu** é uma aplicação Web que possibilita aos usuários encurtar e vizua
 
 Este projeto foi idealizado pensando no camarão **pitu**, caracterizado por nascer pequenininho e em sua forma adulta ser muito grande. 
 
-Essa aplicação foi realizada durante a **Semana Full Stack JS**, projeto do professor [Luiz Duarte](https//www.luiztools.com.br).
+Essa aplicação foi realizada durante a **Semana Full Stack JS**, projeto do professor [Luiz Duarte](https://www.luiztools.com.br).
 
 ## :rocket: Tecnologias Utilizadas
 
