@@ -1,5 +1,5 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const BlockContainer = styled.div`
-    display: block;
-`
+  display: block;
+`;
